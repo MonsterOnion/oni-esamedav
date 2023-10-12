@@ -1,0 +1,22 @@
+{
+    "format_options": ["mp3", "mp4"],
+
+    "quality_options": {
+        "mp3": [
+            {"name": "320Kbps", "ffmpeg_args": "-b:a 320k"},
+            {"name": "256Kbps", "ffmpeg_args": "-b:a 256k"},
+            {"name": "192Kbps", "ffmpeg_args": "-b:a 192k"},
+            {"name": "128Kbps", "ffmpeg_args": "-b:a 128k"}
+        ],
+        "mp4": [
+            {"name": "Full HD 1080P", "ffmpeg_args": "-vf scale=1920:1080"},
+            {"name": "HD 720P", "ffmpeg_args": "-vf scale=1280:720"},
+            {"name": "SD 480P", "ffmpeg_args": "-vf scale=854:480"}
+        ]
+    },
+
+    "format_to_extension": {
+        "mp3": "mp3",
+        "mp4": "mp4"
+    }
+}
