@@ -88,13 +88,13 @@ class DownloadThread(QThread):
 		if self.conversion_thread:
 			self.conversion_thread.finished.connect(self.handle_conversion_finished)
 			conversion.start()
-			self.progress_signal.emit("Successfully converted")
 
 
 	def handle_conversion_finished(self):
 		if self.conversion_thread:
 			self.conversion_thread.finished.disconnect(self.handle_conversion_finished)
 			self.conversion_thread = None
+			self.progress_signal.emit("Successfully converted")
 
 
 """ Download thread is end here """
