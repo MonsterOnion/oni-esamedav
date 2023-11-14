@@ -3,6 +3,7 @@ import subprocess
 import yt_dlp as youtube_dl
 import re
 import threading
+import time
 
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QCheckBox, QComboBox, QLineEdit, QVBoxLayout, QHBoxLayout, QTabWidget, QFileDialog, QMessageBox, QTextEdit
 from PyQt5.QtCore import Qt, pyqtSignal, pyqtSlot, QThread
@@ -121,6 +122,7 @@ class ConversionThread(QThread):
 		]
 
 		subprocess.run(ffmpeg_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+		time.sleep(2)
 		self.remove_input_media()
 
 
